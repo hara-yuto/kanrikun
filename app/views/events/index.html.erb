@@ -1,11 +1,23 @@
+<% if user_signed_in? %>
+<%= link_to current_user.name + "さん" , class: :greeting__link%>
+<div class="nav__right"> 
+<%= link_to "ログアウト", destroy_user_session_path, class: :nav__logout ,method: :delete%>
 <%= link_to 'イベント追加', new_event_path %>
-
 <%= month_calendar events: @events do |date, events| %>
   <%= date.day %>
 
     <% events.each do |event| %>
     <div>
-      <%= event.title %>
+      <%= event.content %>
     </div>
   <% end %>
 <% end %>
+</div> 
+
+<%else%>
+<div class="nav__right">
+<%= link_to "ログイン", new_user_session_path , class: :nav__btn %>
+<%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
+ </div>
+<%end%>
+
