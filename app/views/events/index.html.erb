@@ -4,14 +4,42 @@
 <%= link_to current_user.name + "さん" , class: :greeting__link%>
 <div class="nav__right"> 
 
-<%= link_to 'イベント追加', new_event_path %>
+<%= form_with(model: @event, local: true) do |form| %>
+
+    <div class="time">
+    <%= form.label :本日日付%>
+    <%= form.datetime_select :start_time %>
+  </div>
+
+    <div class="title">
+    <%= form.label :タイトル %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="content">
+    <%= form.label :日誌内容 %>
+    <%= form.text_area  :content %>
+  </div>
+
+  <div class="worktime">
+    <%= form.label :労働時間 %>
+    <%= form.text_field :worktime%>
+  </div>
+
+  <div class="submit">
+    <%= form.submit %>
+  </div>
+
+<% end %>
+ 
 <%= month_calendar events: @events do |date, events| %>
   <%= date.day %>
-
+<%  current_user.id == @event.user_id %>
     <% events.each do |event| %>
     <div>
-      <%= link_to event.title, event %>
+      <%= link_to event.title, event%>
     </div>
+  
   <% end %>
 <% end %>
 </div> 

@@ -15,5 +15,11 @@
   <%= @event.content %>
 </p>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
+<p>
+  <strong>労働時間</strong>
+  <%= @event.worktime %>
+</p>
+
+<%= link_to '編集', edit_event_path(@event) %> 
+<%= link_to "削除する", event_path(@event.id),method: :delete%>
 <%= link_to 'Back', root_path %>

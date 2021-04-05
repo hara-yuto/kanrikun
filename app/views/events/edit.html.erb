@@ -1,0 +1,22 @@
+<%= form_with model: @event, local: true do |f|%>
+  <div class="field">
+    <%= f.label :title, "タイトル" %><br />
+    <%= f.text_field :title, id:"title" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content, "日誌内容" %><br />
+    <%= f.text_area :content, class: :form__text, id:"content" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :worktime, "労働時間" %><br />
+    <%= f.text_area :worktime, class: :form__text, id:"worktime" %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>
