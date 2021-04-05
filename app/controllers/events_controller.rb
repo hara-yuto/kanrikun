@@ -9,6 +9,30 @@ class EventsController < ApplicationController
   def create
     Event.create(event_parameter)
     redirect_to root_path
+
+  end
+
+  def show
+    @event = Event.find(params[:id])
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to events_path, notice:"削除しました"
+  end
+
+  def edit
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    if @event.update(event_parameter)
+      redirect_to root_path, notice: "編集しました"
+    else
+      render 'edit'
+    end
   end
 
   private
