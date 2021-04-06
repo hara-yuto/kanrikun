@@ -2,7 +2,6 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
     @event = Event.new
-    
   end
   def new
     @event = Event.new
@@ -10,6 +9,10 @@ class EventsController < ApplicationController
 
   def create
     event=Event.create(event_parameter)
+    @event = Event.new(
+      user_id: @current_user.id
+
+    )
     if  event.save
         flash[:notice] = "入力が完了いたしました！"
         redirect_to root_path
