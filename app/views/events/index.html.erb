@@ -1,4 +1,4 @@
-<% if user_signed_in? && current_user.id  %>
+<% if user_signed_in?   %>
 <%= link_to "ログアウト", destroy_user_session_path, class: :nav__logout ,method: :delete%>
 <p id="notice"><%= notice %></p>
 <%= link_to current_user.name + "さん" , class: :greeting__link%>
@@ -30,10 +30,20 @@
     <%= form.submit %>
   </div>
 
-<% end %>
+ <% end %>
  
-
-</div> 
+ <%= month_calendar events: @events do |date, events| %>
+  <%= date.day %>
+  
+    <% events.each do |event| %>
+    <% if current_user.id == event.user_id%>
+    <div>
+      <%=link_to event.title,event_path(event.id)%>
+    </div>
+    <%end%>
+<%end%>
+<%end%>
+ </div> 
 <%else%>
 <div class="nav__right">
 <%= link_to "ログイン", new_user_session_path , class: :nav__btn %>
@@ -42,15 +52,6 @@
 <%end%>
 
 
-<%= month_calendar events: @events do |date, events| %>
-  <%= date.day %>
 
-    <% events.each do |event| %>
-    <div>
-      <%= link_to event.title, event%>
-    </div>
-    
- 
-<% end %>
-<%end%>
+
 
