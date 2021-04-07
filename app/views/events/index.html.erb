@@ -1,7 +1,7 @@
 <% if user_signed_in?   %>
 <%= link_to "ログアウト", destroy_user_session_path, class: :nav__logout ,method: :delete%>
 <p id="notice"><%= notice %></p>
-<%= link_to current_user.name + "さん", "/users/#{current_user.id}",class: :greeting__link%>
+<%= link_to current_user.name + "さんの労働時間管理", "/users/#{current_user.id}",class: :greeting__link%>
 <div class="nav__right"> 
 
 <%= form_with(model: @event, local: true) do |form| %>
@@ -50,24 +50,7 @@
 <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
  </div>
 <%end%>
-<%= form_with(model: @event, local: true) do |form| %>
-<%= form_with url:  "/posts", method: :post,id: "form" do |form| %>
-  <%= form.text_field :content %>
-  <%= form.text_field :content %>
-  <%= form.text_field :content %>
-  <%= form.text_field :content %>
-  <%= form.text_field :content %>
-  <%= form.submit '労働時間を計算する' , id: "submit" %>
-<% end %>
 
-  <%end%>
-          <span>販売手数料 (10%)</span>
-          <span>
-            <span id='add-tax-price'></span>円
-          </span>
-          <span>販売利益</span>
-          <span>
-            <span id='profit'></span>円
 
 
 

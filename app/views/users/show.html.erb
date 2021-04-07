@@ -1,5 +1,22 @@
 <h1>労働時間管理</h1>
 
+<%= form_with(model: @user, local: true) do |form| %>
+<%= form_with url:  "/posts", method: :post,id: "form" do |form| %>
+  <%= form.text_field :content %>
+  <%= form.text_field :content %>
+  <%= form.text_field :content %>
+  <%= form.text_field :content %>
+  <%= form.text_field :content %>
+  <%= form.submit '労働時間を計算する' , id: "submit" %>
+<% end %>
 
+  <%end%>
+          <span>販売手数料 (10%)</span>
+          <span>
+            <span id='add-tax-price'></span>円
+          </span>
+          <span>販売利益</span>
+          <span>
+            <span id='profit'></span>円
 
 <%= link_to 'Back', root_path %>
