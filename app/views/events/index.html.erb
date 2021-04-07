@@ -1,7 +1,7 @@
 <% if user_signed_in?   %>
 <%= link_to "ログアウト", destroy_user_session_path, class: :nav__logout ,method: :delete%>
 <p id="notice"><%= notice %></p>
-<%= link_to current_user.name + "さん", class: :greeting__link%>
+<%= link_to current_user.name + "さん", "/users/#{current_user.id}",class: :greeting__link%>
 <div class="nav__right"> 
 
 <%= form_with(model: @event, local: true) do |form| %>
