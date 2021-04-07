@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>タイトル</strong>
+  <%= @event.title %>
+</p>
+
+<p>
+  <strong>時間</strong>
+  <%= @event.start_time.strftime("%Y-%m-%d %H:%M") %>
+</p>
+
+<p>
+  <strong>内容</strong>
+  <%= @event.content %>
+</p>
+
+<p>
+  <strong>労働時間</strong>
+  <%= @event.worktime %>
+</p>
+ <% if user_signed_in? && current_user.id == @event.user_id %>
+<%= link_to '編集', edit_event_path(@event) %> 
+<%= link_to "削除する", event_path(@event.id),method: :delete%>
+<%end%>
+<%= link_to 'Back', root_path %>

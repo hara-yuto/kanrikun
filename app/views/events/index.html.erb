@@ -1,23 +1,74 @@
-<% if user_signed_in? %>
-<%= link_to current_user.name + "さん" , class: :greeting__link%>
-<div class="nav__right"> 
+<% if user_signed_in?   %>
 <%= link_to "ログアウト", destroy_user_session_path, class: :nav__logout ,method: :delete%>
-<%= link_to 'イベント追加', new_event_path %>
-<%= month_calendar events: @events do |date, events| %>
+<p id="notice"><%= notice %></p>
+<%= link_to current_user.name + "さん", class: :greeting__link%>
+<div class="nav__right"> 
+
+<%= form_with(model: @event, local: true) do |form| %>
+
+    <div class="time">
+    <%= form.label :本日日付%>
+    <%= form.datetime_select :start_time %>
+  </div>
+
+    <div class="title">
+    <%= form.label :タイトル %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="content">
+    <%= form.label :日誌内容 %>
+    <%= form.text_area  :content %>
+  </div>
+
+  <div class="worktime">
+    <%= form.label :労働時間 %>
+    <%= form.text_field :worktime%>
+  </div>
+
+  <div class="submit">
+    <%= form.submit %>
+  </div>
+
+ <% end %>
+ 
+ <%= month_calendar events: @events do |date, events| %>
   <%= date.day %>
-
+  
     <% events.each do |event| %>
+    <% if current_user.id == event.user_id%>
     <div>
-      <%= event.content %>
+      <%=link_to event.title,event_path(event.id)%>
     </div>
-  <% end %>
-<% end %>
-</div> 
-
+    <%end%>
+<%end%>
+<%end%>
+ </div> 
 <%else%>
 <div class="nav__right">
 <%= link_to "ログイン", new_user_session_path , class: :nav__btn %>
 <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
  </div>
 <%end%>
+<%= form_with(model: @event, local: true) do |form| %>
+<%= form_with url:  "/posts", method: :post,id: "form" do |form| %>
+  <%= form.text_field :content %>
+  <%= form.text_field :content %>
+  <%= form.text_field :content %>
+  <%= form.text_field :content %>
+  <%= form.text_field :content %>
+  <%= form.submit '労働時間を計算する' , id: "submit" %>
+<% end %>
+
+  <%end%>
+          <span>販売手数料 (10%)</span>
+          <span>
+            <span id='add-tax-price'></span>円
+          </span>
+          <span>販売利益</span>
+          <span>
+            <span id='profit'></span>円
+
+
+
 
