@@ -37,7 +37,8 @@ class EventsController < ApplicationController
     if @event.update(event_parameter)
       redirect_to root_path, notice: "編集しました！"
     else
-      render 'edit'
+      flash[:notice] = "編集完了できません！"
+      redirect_to edit_event_path(@event)
     end
   end
 
