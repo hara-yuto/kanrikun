@@ -50,32 +50,40 @@
 
     <div class=keisan>
     <br>
-        <b>１ヶ月の労働日数</b>
+        <b>労働日数(月)</b>
         <div><input  type="number" class="box" name="f" placeholder="半角数字のみ">日　</div>
-        <b>総労働時間(月)</b>
+        <b>平均労働時間(日)</b>
         <div><input type="number" class="box" name="g" placeholder="半角数字のみ">時間</div>
+        <b>(所定・法定)労働時間(日)</b>
+        <div><input type="number" class="box" name="h" placeholder="半角数字のみ">時間</div>
+    <br>
+    <br>
+    <br>
+    <br>
 
-        <p><input type="button" class="cal-btn" onclick="cal(f.value, g.value);" value="計算"></p>
+        <p><input type="button" class="cal-btn" onclick="cal(f.value, g.value, h.value);" value="計算"></p>
         <b>残り法定時間外労働(月)</b>
         <div><input id="monthall" class="box" type="text" readonly="">時間</div>
-
+        <b>残業時間(月)</b>
+        <div><input id="monthqua" class="box" type="text" readonly="">時間</div>
        </div>
        </form>
+
        <script>
 
-       function cal(f,g) {
+       function cal(f,g,h) {
      
         const monthall_value = document.getElementById('monthall').value 
-        = Math.round (45 + ((parseInt(f) * 8)-parseInt(g))) ;
-        
+        = Math.round (45  -  ((parseInt(f) * parseInt(g)) - (parseInt(f)*parseInt(h))) );
+       
+        const monthqua_value = document.getElementById('monthqua').value 
+        = Math.round  ((parseInt(f) * parseInt(g)) - (parseInt(f)*parseInt(h)));
        }
        </script>
 
 
        <textarea  placeholder="メモ帳" class="large-field"></textarea>
     </div>
-
-
  </div>
- <br>
- 
+
+
