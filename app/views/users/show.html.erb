@@ -13,15 +13,15 @@
     <div class=keisan>
     <br>
         <b>月曜日</b>
-        <div><input  type="text" class="box" name="A" placeholder="半角数字のみ">時間</div>
+        <div><input  type="number" class="box" name="A" placeholder="半角数字のみ">時間</div>
         <b>火曜日</b>
-        <div><input type="text" class="box" name="B" placeholder="半角数字のみ">時間</div>
+        <div><input type="number" class="box" name="B" placeholder="半角数字のみ">時間</div>
         <b>水曜日</b>
-        <div><input type="text" class="box" name="C" placeholder="半角数字のみ">時間</div>
+        <div><input type="number" class="box" name="C" placeholder="半角数字のみ">時間</div>
         <b>木曜日</b>
-        <div><input type="text" class="box" name="D" placeholder="半角数字のみ">時間</div>
+        <div><input type="number" class="box" name="D" placeholder="半角数字のみ">時間</div>
         <b>金曜日</b>
-        <div><input type="text" class="box" name="E" placeholder="半角数字のみ">時間</div>
+        <div><input type="number" class="box" name="E" placeholder="半角数字のみ">時間</div>
 
         <p><input type="button" class="calc-btn" onclick="calc();" value="計算"></p>
         <b>総労働時間(週)</b>
@@ -32,7 +32,7 @@
        </div>
        </form>
        <script>
-
+    
        function calc() {
         document.time_kanri.AE.value 
         =eval(document.time_kanri.A.value) + eval(document.time_kanri.B.value)+ eval(document.time_kanri.C.value)+ eval(document.time_kanri.D.value)+ eval(document.time_kanri.E.value);
@@ -50,11 +50,11 @@
     <div class=keisan>
     <br>
         <b>労働日数(月)</b>
-        <div><input  type="text" class="box" name="F" placeholder="半角数字のみ">日　</div>
+        <div><input  type="number" class="box" name="F" placeholder="半角数字のみ">日　</div>
         <b>平均労働時間(日)</b>
-        <div><input type="text" class="box" name="G" placeholder="半角数字のみ">時間</div>
-        <b>(所定・法定)労働時間(日)</b>
-        <div><input type="text" class="box" name="H" placeholder="半角数字のみ" >時間</div>
+        <div><input type="number" class="box" name="G"  placeholder="半角数字のみ">時間</div>
+         <b>(所定・法定)労働時間(日)</b>
+        <div><input  type="number" class="box" name="H"  placeholder="半角数字のみ">時間</div>
     <br>
     <br>
     <br>
@@ -68,21 +68,35 @@
        </div>
        </form>
 
-       <script>
+       
 
+       <script>
        
         function cal() {
+
+        if( document.time_kanri2.H.value <= 8 ){
+          
         document.time_kanri2.FH.value 
-        =45 - ((eval(document.time_kanri2.F.value)*eval(document.time_kanri2.G.value)) - (eval(document.time_kanri2.F.value) * eval(document.time_kanri2.H.value)));
-
+        =45 - (eval(document.time_kanri2.F.value) * eval(document.time_kanri2.G.value) - eval(document.time_kanri2.F.value) * eval(document.time_kanri2.H.value));
         
-        document.time_kanri2.HF.value 
-        =(eval(document.time_kanri2.F.value)*eval(document.time_kanri2.G.value)) - (eval(document.time_kanri2.F.value) * eval(document.time_kanri2.H.value));
-       }
-       
-       
+        if(document.time_kanri2.FH.value < 0){
+            alert("働きすぎ!働き方の見直しもしくは労働基準監督署へ急げ!!");
+        }
 
-       </script>
+
+         
+        document.time_kanri2.HF.value 
+        = (eval(document.time_kanri2.F.value)*eval(document.time_kanri2.G.value)) - (eval(document.time_kanri2.F.value) * eval(document.time_kanri2.H.value));
+        }else {
+          alert("法定労働時間はMAX８時間!!");
+        }
+
+
+
+        }
+       
+      
+        </script>
 
 
        <textarea  placeholder="メモ帳" class="large-field"></textarea>
