@@ -1,0 +1,19 @@
+.keisan{
+  text-align: center;
+}
+
+.box{
+  text-align: center;
+  
+}
+
+.alltime{
+display: flex;
+justify-content:space-evenly;
+}
+
+.large-field{
+width: 30vw;
+height:60vh ;
+
+}

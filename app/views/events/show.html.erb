@@ -1,23 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>タイトル</strong>
-  <%= @event.title %>
+  <strong >タイトル</strong>
+  <br><%= @event.title %>
 </p>
 
 <p>
   <strong>時間</strong>
-  <%= @event.start_time.strftime("%Y-%m-%d %H:%M") %>
+  <br><%= @event.start_time.strftime("%Y-%m-%d %H:%M") %>
 </p>
 
 <p>
   <strong>内容</strong>
-  <%= @event.content %>
+  <br><%= @event.content %>
 </p>
 
 <p>
   <strong>労働時間</strong>
-  <%= @event.worktime %>
+  <br><%= @event.worktime %>時間
 </p>
  <% if user_signed_in? && current_user.id == @event.user_id %>
 <%= link_to '編集', edit_event_path(@event) %> 

@@ -4,17 +4,16 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
-
   def create
-    event=Event.create(event_parameter)
+    event = Event.new(event_parameter)
 
-    if  event.save
-        flash[:notice] = "入力が完了いたしました！"
-        redirect_to root_path
+    if event.save
+      flash[:notice] = '入力が完了いたしました！'
+      redirect_to root_path
     else
-      render :index
+      flash[:notice] = '保存できません！'
+      redirect_to root_path
     end
-
   end
 
   def show
@@ -24,7 +23,7 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
-    redirect_to events_path, notice:"削除しました"
+    redirect_to events_path, notice: '削除しました！'
   end
 
   def edit
@@ -34,17 +33,16 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     if @event.update(event_parameter)
-      redirect_to root_path, notice: "編集しました"
+      redirect_to root_path, notice: '編集しました！'
     else
-      render 'edit'
+      flash[:notice] = '編集できません！'
+      redirect_to edit_event_path(@event)
     end
   end
 
   private
 
   def event_parameter
-    params.require(:event).permit(:title, :content,:worktime, :start_time).merge(user_id: current_user.id)
+    params.require(:event).permit(:title, :content, :worktime, :start_time).merge(user_id: current_user.id)
   end
 end
-
-

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post 'events/index'
   
   root to: 'events#index'
+  resources :users, only: :show
   resources :events
   
 end
