@@ -1,28 +1,32 @@
+
+
+<body>
 <% if user_signed_in?   %>
-<%= link_to "ログアウト", destroy_user_session_path, class: :nav__logout ,method: :delete%>
-<p id="notice"><%= notice %></p>
+<div class=first_top2>
+<%= link_to "log out", destroy_user_session_path, class: :nav__logout ,method: :delete%>
+</div>
+<h1 id="notice"><%= notice %></h1>
 <%= link_to current_user.name + "さんの労働時間計算", "/users/#{current_user.id}",class: :greeting__link%>
 <div class="nav__right"> 
-
 <%= form_with(model: @event, local: true) do |form| %>
 
     <div class="time">
-    <%= form.label :本日日付%>
+    <%= form.label :本日日付%><br>
     <%= form.datetime_select :start_time %>
   </div>
 
     <div class="title">
-    <%= form.label :タイトル %>
+    <%= form.label :タイトル %><br>
     <%= form.text_field :title  %>
   </div>
 
   <div class="content">
-    <%= form.label :日誌内容 %>
+    <%= form.label :日誌内容 %><br>
     <%= form.text_area  :content %>
   </div>
 
   <div class="worktime">
-    <%= form.label :労働時間 %>
+    <%= form.label :労働時間 %><br>
     <%= form.text_field :worktime%>
   </div>
 
@@ -31,7 +35,7 @@
   </div>
 
  <% end %>
- 
+ <div class=Calender>
  <%= month_calendar events: @events do |date, events| %>
   <%= date.day %>
   
@@ -41,17 +45,20 @@
       <%=link_to event.title,event_path(event.id)%>
     </div>
     <%end%>
-<%end%>
-<%end%>
+  <%end%>
+  <%end%>
  </div> 
+ </div>
 <%else%>
+<div class=first_top>
 <div class="nav__right">
-<%= link_to "ログイン", new_user_session_path , class: :nav__btn %>
-<%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
+<%= link_to "log in", new_user_session_path , class: :nav__btn %>
+<%= link_to "new", new_user_registration_path, class: :nav__btn %>
+ </div>
  </div>
 <%end%>
 
-
+</body>
 
 
 

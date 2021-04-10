@@ -1,0 +1,43 @@
+body{
+   background-color: #486d46;  
+   background-image: url(back1.png);
+   background-size: cover;
+   background-attachment: fixed;
+   background-position: center center;
+ 
+}
+
+.first_top{
+text-align: right;
+}
+
+.nav__btn{
+   font-size: 20px;
+   padding:10px; 
+   margin: 10px; 
+   border: 1px solid white;
+   background-color: gray;
+   color: white;
+}
+
+.first_top2{
+   text-align: right;
+}
+.nav__logout{
+   font-size: 20px;
+   padding:10px; 
+   margin: 10px; 
+   border: 1px solid white;
+   background-color: gray;
+   color: white;
+
+}
+
+.Calender{
+background-color: white;
+border:1px solid black;
+
+}
+
+
+
