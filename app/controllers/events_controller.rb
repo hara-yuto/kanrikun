@@ -33,7 +33,7 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     if @event.update(event_parameter)
-      redirect_to root_path, notice: '編集しました！'
+      redirect_to event_path, notice: '編集しました！'
     else
       flash[:notice] = '編集できません！'
       redirect_to edit_event_path(@event)

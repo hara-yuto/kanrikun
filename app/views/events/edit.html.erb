@@ -1,14 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div class=announce><strong id="notice"><%= notice %></strong></div>
+<div class= show_all>
 <%= form_with model: @event, local: true do |f|%>
   <div class="field">
     <%= f.label :title, "タイトル ※空欄不可" %><br />
     <%= f.text_field :title, id:"title" %>
   </div>
 
+ <div class="field">
+    <%= f.label :start_time, "日誌内容" %><br />
+    <%= f.datetime_select :start_time, class: :form__text, id:"start_time" %>
+  </div>  
+
+
   <div class="field">
     <%= f.label :content, "日誌内容" %><br />
     <%= f.text_area :content, class: :form__text, id:"content" %>
   </div>  
+
   <div class="field">
     <%= f.label :worktime, "労働時間 ※半角数字" %><br />
     <%= f.text_area :worktime, class: :form__text, id:"worktime" %>
@@ -17,9 +25,10 @@
 
 
   <div class="actions">
-    <%= f.submit "保存する", class: :form__btn  %>
+    <%= f.submit "保存する",class: :form__btn  %>
     <br>
     <br>
     <%= link_to 'Back', root_path %>
   </div>
 <% end %>
+</div>
