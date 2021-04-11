@@ -1,11 +1,10 @@
  <h1>簡易労働時間計算</h1>
- <%= link_to '戻る', root_path %>
-  <br>
-■１日間の法定労働時間　　　max:8時間
- <br>
-■１週間の法定労働時間　　　max:40時間
-<br>
-■１ヶ月の法定時間外労働　　max:45時間
+<h3>＜働く上でのルール＞</h3>
+<p>■１日間の法定労働時間　　　最大: 8時間</p>
+
+<p>■１週間の法定労働時間　　　最大:40時間</p>
+
+<p>■１ヶ月の法定時間外労働　　最大:45時間</p>
 
  <div class=alltime>
    <form name="time_kanri">
@@ -13,19 +12,19 @@
     <div class=keisan>
     <br>
         <b>月曜日</b>
-        <div><input  type="number" class="box" name="A" placeholder="半角数字のみ">時間</div>
+        <div><input  type="number" class="box" name="A" placeholder="半角数字のみ">時間</div><br>
         <b>火曜日</b>
-        <div><input type="number" class="box" name="B" placeholder="半角数字のみ">時間</div>
+        <div><input type="number" class="box" name="B" placeholder="半角数字のみ">時間</div><br>
         <b>水曜日</b>
-        <div><input type="number" class="box" name="C" placeholder="半角数字のみ">時間</div>
+        <div><input type="number" class="box" name="C" placeholder="半角数字のみ">時間</div><br>
         <b>木曜日</b>
-        <div><input type="number" class="box" name="D" placeholder="半角数字のみ">時間</div>
+        <div><input type="number" class="box" name="D" placeholder="半角数字のみ">時間</div><br>
         <b>金曜日</b>
-        <div><input type="number" class="box" name="E" placeholder="半角数字のみ">時間</div>
+        <div><input type="number" class="box" name="E" placeholder="半角数字のみ">時間</div><br>
 
-        <p><input type="button" class="calc-btn" onclick="calc();" value="計算"></p>
+        <p><input type="button" class="calc-btn" onclick="calc();" value="計算"></p><br>
         <b>総労働時間(週)</b>
-        <div><input id="weekall" class="box" type="text" name="AE" readonly="">時間</div>
+        <div><input id="weekall" class="box" type="text" name="AE" readonly="">時間</div><br>
         <b>残り法定労働時間(週)</b>
         <div><input id="weekqua" class="box" type="text"  name="EA" readonly="">時間</div>
 
@@ -50,19 +49,21 @@
     <div class=keisan>
     <br>
         <b>労働日数(月)</b>
-        <div><input  type="number" class="box" name="F" placeholder="半角数字のみ">日　</div>
+        <div><input  type="number" class="box" name="F" placeholder="半角数字のみ">日　</div><br>
         <b>平均労働時間(日)</b>
-        <div><input type="number" class="box" name="G"  placeholder="半角数字のみ">時間</div>
+        <div><input type="number" class="box" name="G"  placeholder="半角数字のみ">時間</div><br>
          <b>(所定・法定)労働時間(日)</b>
-        <div><input  type="number" class="box" name="H"  placeholder="半角数字のみ">時間</div>
+        <div><input  type="number" class="box" name="H"  placeholder="半角数字のみ">時間</div><br>
+    <br>
+    <br>
     <br>
     <br>
     <br>
     <br>
 
-        <p><input type="button" class="cal-btn" onclick="cal();" value="計算"></p>
+        <p><input type="button" class="cal-btn" onclick="cal();" value="計算"></p><br>
         <b>残り法定時間外労働(月)</b>
-        <div><input id="monthall" class="box" type="text" name="FH" readonly="">時間</div>
+        <div><input id="monthall" class="box" type="text" name="FH" readonly="">時間</div><br>
         <b>残業時間(月)</b>
         <div><input id="monthqua" class="box" type="text" name="HF"readonly="">時間</div>
        </div>
@@ -81,26 +82,25 @@
         
         if(document.time_kanri2.FH.value < 0){
             alert("働きすぎ!働き方の見直しもしくは労働基準監督署へ急げ!!");
-        }
-
+        }else if(document.time_kanri2.FH.value > 45){
+         document.time_kanri2.FH.value = 45
+        };
 
          
         document.time_kanri2.HF.value 
         = (eval(document.time_kanri2.F.value)*eval(document.time_kanri2.G.value)) - (eval(document.time_kanri2.F.value) * eval(document.time_kanri2.H.value));
+        if(document.time_kanri2.HF.value < 0){
+          document.time_kanri2.HF.value=0};
         }else {
-          alert("法定労働時間はMAX８時間!!");
+          alert("１日の法定労働時間は最大８時間!!");
         }
-
-
-
         }
-       
-      
         </script>
 
 
        <textarea  placeholder="メモ帳" class="large-field"></textarea>
     </div>
  </div>
-
+ <br>
+ <%= link_to '戻る', root_path %>
 
