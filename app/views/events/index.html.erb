@@ -1,0 +1,98 @@
+
+
+<body>
+<% if user_signed_in?   %>
+<div class=first_top2>
+<%= link_to "log out", destroy_user_session_path, class: :nav__logout ,method: :delete%>
+</div>
+<h1 id="notice"><%= notice %></h1>
+<%=%>
+ <div class= my_name>
+    <%= current_user.name + "さんのcalendarです！" %><br>
+    </div>
+<%= link_to "✍️労働時間計算ページ✍️", "/users/#{current_user.id}",class: :greeting__link%>
+<div class="nav__right"> 
+<br>
+<%= form_with(model: @event, local: true) do |form| %>
+
+
+<div class= form_font>
+
+    <div class="time">
+    <%= form.label :日付%><br>
+    <%= form.datetime_select :start_time %>
+    
+  </div>
+   <br>
+    <div class="title">
+    <%= form.label :タイトル%><br>
+    <%= form.text_field :title ,placeholder:"入力必須"%>
+  </div>
+
+
+  <div class="content">
+  <br>
+    <%= form.label :日誌内容 %><br>
+    <%= form.text_area  :content %>
+  </div>
+ 
+
+  <div class="worktime">
+ <br>
+    <%= form.label :労働時間 %><br>
+    <%= form.text_field :worktime,placeholder:"半角数字のみ"%>
+  </div>
+
+  <div class="submit">
+    <%= form.submit %>
+  </div>
+</div>
+
+ <% end %>
+ <br>
+ <div class=Calender>
+ <%= month_calendar events: @events do |date, events| %>
+  <%= date.day %>
+  
+    <% events.each do |event| %>
+    <% if current_user.id == event.user_id%>
+    <div>
+      <%=link_to event.title,event_path(event.id)%>
+    </div>
+    <%end%>
+  <%end%>
+  <%end%>
+ </div> 
+ </div>
+<%else%>
+<div class=first_top>
+<div class="nav__right">
+<%= link_to "log in", new_user_session_path , class: :nav__btn %>
+<%= link_to "new", new_user_registration_path, class: :nav__btn %>
+ </div>
+ </div>
+<div class= topall>
+ <h2 class=daimei>【使用方法】</h2>
+  <div class=top_messe>
+<ul>
+<li class=teigi><b>自分専用のスケジュール機能</b>
+<br>→編集削除機能付きのシンプルカレンダー！</li>
+
+<li class=teigi><b>ユーザーアカウント機能付き</b>
+<br>→アカウント作成で用途によって使い分け！</li>
+
+<li class=teigi><b>労働時間や残業時間の超過防止</b>
+<br>→簡易計算機能付きで労働時間の管理が可能！</li>
+
+</ul>
+
+</div>
+
+ </div>
+ 
+<%end%>
+
+</body>
+
+
+
