@@ -112,3 +112,21 @@ padding-bottom: 30px;
 color: white;
 text-shadow:1px 1px 0 black,-1px 1px 0 black,1px -1px 0 black,-1px -1px 0 black;
 }
+
+.form_font{
+   font-size: 17px;
+   color: white;
+   text-shadow:1px 1px 0 black,-1px 1px 0 black,1px -1px 0 black,-1px -1px 0 black;
+
+}
+
+.greeting__link{
+font-size: 20px;
+
+}
+
+.my_name{
+font-size: 20px;
+font-weight: 700;
+
+}
