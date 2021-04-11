@@ -99,6 +99,7 @@
         =45 - (eval(document.time_kanri2.F.value) * eval(document.time_kanri2.G.value) - eval(document.time_kanri2.F.value) * eval(document.time_kanri2.H.value));
         
         if(document.time_kanri2.FH.value < 0){
+          document.time_kanri2.FH.value=0         
             alert("働きすぎ!働き方の見直しもしくは労働基準監督署へ急げ!!");
         }else if(document.time_kanri2.FH.value > 45){
          document.time_kanri2.FH.value = 45
