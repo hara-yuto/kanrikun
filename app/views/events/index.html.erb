@@ -9,7 +9,7 @@
 <%= link_to current_user.name + "さんの労働時間計算", "/users/#{current_user.id}",class: :greeting__link%>
 <div class="nav__right"> 
 <%= form_with(model: @event, local: true) do |form| %>
-
+<div class= form_font>
     <div class="time">
     <%= form.label :本日日付%><br>
     <%= form.datetime_select :start_time %>
@@ -33,8 +33,9 @@
   <div class="submit">
     <%= form.submit %>
   </div>
-
+</div>
  <% end %>
+ <br>
  <div class=Calender>
  <%= month_calendar events: @events do |date, events| %>
   <%= date.day %>
@@ -56,6 +57,25 @@
 <%= link_to "new", new_user_registration_path, class: :nav__btn %>
  </div>
  </div>
+<div class= topall>
+ <h2 class=daimei>【使用方法】</h2>
+  <div class=top_messe>
+<ul>
+<li class=teigi><b>自分専用のスケジュール機能</b>
+<br>→編集削除機能付きのシンプルカレンダー！</li>
+
+<li class=teigi><b>ユーザーアカウント機能付き</b>
+<br>→アカウント作成で用途によって使い分け！</li>
+
+<li class=teigi><b>労働時間や残業時間の超過防止</b>
+<br>→簡易計算機能付きで労働時間の管理が可能！</li>
+
+</ul>
+
+</div>
+
+ </div>
+ 
 <%end%>
 
 </body>

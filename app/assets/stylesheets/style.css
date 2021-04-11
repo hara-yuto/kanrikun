@@ -4,7 +4,40 @@ body{
    background-size: cover;
    background-attachment: fixed;
    background-position: center center;
- 
+
+}
+
+.daimei{
+
+text-align: center;
+
+padding: 10px ;
+}
+
+.topall{
+
+   border: 5px double gray;
+   padding: 0px 15px 20px 15px;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   -webkit-transform: translate(-50%, -50%);
+   -ms-transform: translate(-50%, -50%);
+}
+
+
+.teigi{
+list-style: decimal;
+margin-bottom:30px;
+}
+
+.top_messe{
+   color: white;
+  
+
+text-shadow:1px 1px 0 black,-1px 1px 0 black,1px -1px 0 black,-1px -1px 0 black;
+
 }
 
 .first_top{
@@ -12,11 +45,11 @@ text-align: right;
 }
 
 .nav__btn{
-   font-size: 20px;
+   font-size: 15px;
    padding:10px; 
    margin: 10px; 
    border: 1px solid white;
-   background-color: gray;
+   background-color: #FD451F;
    color: white;
 }
 
@@ -24,11 +57,11 @@ text-align: right;
    text-align: right;
 }
 .nav__logout{
-   font-size: 20px;
+   font-size: 15px;
    padding:10px; 
    margin: 10px; 
    border: 1px solid white;
-   background-color: gray;
+   background-color: #FD451F;
    color: white;
 
 }
@@ -39,5 +72,43 @@ border:1px solid black;
 
 }
 
+.form_font{
+font-size: 20px;
+color: black ;
+}
 
 
+.newlog{
+   border: 5px double gray;
+   width: 400px;
+   height: 400px auto;
+   text-align: center;
+   position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+-webkit-transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+}
+
+.newlog2{
+   border: 5px double gray;
+   width: 400px;
+   height: 450px auto;
+   text-align: center;
+   position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+-webkit-transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+
+}
+
+
+
+.field{
+padding-bottom: 30px;
+color: white;
+text-shadow:1px 1px 0 black,-1px 1px 0 black,1px -1px 0 black,-1px -1px 0 black;
+}
