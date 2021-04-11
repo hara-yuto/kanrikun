@@ -8,7 +8,7 @@
 <h1 id="notice"><%= notice %></h1>
 <%=%>
  <div class= my_name>
-    <%= current_user.name + "さんのcalendarです！" %><br>
+    <%= "Hello! "+current_user.name + " さん!" %><br>
     </div>
 <%= link_to "✍️労働時間計算ページ✍️", "/users/#{current_user.id}",class: :greeting__link%>
 <div class="nav__right"> 
