@@ -19,26 +19,28 @@
 <div class= form_font>
 
     <div class="time">
-    <%= form.label :本日日付%><br>
+    <%= form.label :日付%><br>
     <%= form.datetime_select :start_time %>
     
   </div>
    <br>
     <div class="title">
-    <%= form.label :タイトル（必須）%><br>
-    <%= form.text_field :title %>
+    <%= form.label :タイトル%><br>
+    <%= form.text_field :title ,placeholder:"入力必須"%>
   </div>
+
 
   <div class="content">
   <br>
     <%= form.label :日誌内容 %><br>
     <%= form.text_area  :content %>
   </div>
+ 
 
   <div class="worktime">
  <br>
-    <%= form.label :労働時間（半角） %><br>
-    <%= form.text_field :worktime%>
+    <%= form.label :労働時間 %><br>
+    <%= form.text_field :worktime,placeholder:"半角数字のみ"%>
   </div>
 
   <div class="submit">

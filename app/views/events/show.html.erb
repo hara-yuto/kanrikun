@@ -1,27 +1,27 @@
   <div class=announce><strong  id="notice"><%= notice %></strong ></div>
-<div class= show_all>
-
-
-
-  <p>
+ 
+ <div class= show_all>
+  
   <strong class=showd>タイトル</strong>
   <br><div class=showd2><%= @event.title %></div>
-  </p>  
 
-  <p>
+
+   <br>
   <strong class=showd>時間</strong>
   <br><div class=showd2><%= @event.start_time.strftime("%Y-%m-%d %H:%M") %></div>
-  </p>
+  
 
-  <p>
+   <br>
   <strong class=showd>内容</strong>
-  <br><div class=showd2><%= @event.content %></div>
-  </p>
+  <div class=text_deco>
+  <div class=showd2><%= simple_format(@event.content) %></div>
+  </div>
+ 
 
-  <p>
+  
   <strong class=showd>労働時間</strong>
   <br><div class=showd2><%= @event.worktime %>時間</div>
-  </p>
+  
 
  <% if user_signed_in? && current_user.id == @event.user_id %>
   <%= link_to '編集', edit_event_path(@event) %> 
