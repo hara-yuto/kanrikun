@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!,only:[:show,:edit]
-  before_action :rooting,only: [:show,:edit]
-  before_action :syori,only: [:show,:destroy,:edit,:update]
+  before_action :authenticate_user!, only: [:show, :edit]
+  before_action :rooting, only: [:show, :edit]
+  before_action :syori, only: [:show, :destroy, :edit, :update]
 
   def index
     @events = Event.all
@@ -21,21 +21,17 @@ class EventsController < ApplicationController
   end
 
   def show
-    
   end
 
   def destroy
-   
     @event.destroy
     redirect_to events_path, notice: '削除しました！'
   end
 
   def edit
-    
   end
 
   def update
-    
     if @event.update(event_parameter)
       redirect_to event_path, notice: '編集しました！'
     else
@@ -50,14 +46,12 @@ class EventsController < ApplicationController
     params.require(:event).permit(:title, :content, :worktime, :start_time).merge(user_id: current_user.id)
   end
 
- def rooting
-  @event = Event.find(params[:id])
-  unless @event.user.id == current_user.id
-    redirect_to root_path
+  def rooting
+    @event = Event.find(params[:id])
+    redirect_to root_path unless @event.user.id == current_user.id
   end
- end
 
- def syori
-  @event = Event.find(params[:id])
- end
+  def syori
+    @event = Event.find(params[:id])
+  end
 end
