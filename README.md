@@ -17,7 +17,10 @@
 
 | Column    | Type       | Options     |
 | --------- | ---------- | ----------- |
-| content   | string     | null: false |
+| title     | string     | null: false |
+| content   | text       |             |
+| worktime  | string     |             |
+| start_time| datetime   |             |
 | user      | references |             |
 
 
