@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_04_04_044046) do
     t.string "title", null: false
     t.text "content", null: false
     t.string "worktime"
-    t.datetime "start_time"
+    t.datetime "start_time", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
