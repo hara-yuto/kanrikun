@@ -62,7 +62,7 @@
     <% events.each do |event| %>
     <% if current_user.id == event.user_id%>
     <div>
-      <%=link_to event.title,event_path(event.id)%>
+      <b><%=link_to event.title,event_path(event.id)%></b>
     </div>
     <%end%>
   <%end%>
