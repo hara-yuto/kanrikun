@@ -5,18 +5,21 @@
 <div class=first_top2>
 <%= link_to "log out", destroy_user_session_path, class: :nav__logout ,method: :delete%>
 </div>
-<h1 id="notice"><%= notice %></h1>
-<%=%>
+
+<h1 class=announce id="notice"><%= notice %></h1>
+<br>
+
  <div class= my_name>
     <%= "Hello! "+current_user.name + " さん!" %><br>
     </div>
-<%= link_to "✍️労働時間計算ページ✍️", "/users/#{current_user.id}",class: :greeting__link%>
+<%= link_to "➡️労働計算機", "/users/#{current_user.id}",class: :greeting__link%>
+      <br>
 <div class="nav__right"> 
-<br>
-<%= form_with(model: @event, local: true) do |form| %>
-
-
-<div class= form_font>
+ <br>
+</div>
+<div class= tyukan>
+ <%= form_with(model: @event, local: true) do |form| %>
+ <div class= form_font>
 
     <div class="time">
     <%= form.label :日付%><br>
@@ -46,7 +49,9 @@
   <div class="submit">
     <%= form.submit %>
   </div>
-</div>
+  </div>
+
+
 
  <% end %>
  <br>
@@ -63,6 +68,7 @@
   <%end%>
   <%end%>
  </div> 
+ </div>
  </div>
 <%else%>
 <div class=first_top>
