@@ -22,7 +22,7 @@ RSpec.describe User, type: :model do
       it 'emailが空では登録できない' do
         @user.email = ''
         @user.valid?
-        
+
         expect(@user.errors.full_messages).to include("Email can't be blank")
       end
 
@@ -30,7 +30,7 @@ RSpec.describe User, type: :model do
         @user.save
         another_user = FactoryBot.build(:user, email: @user.email)
         another_user.valid?
-       
+
         expect(another_user.errors.full_messages).to include('Email has already been taken')
       end
 
@@ -50,7 +50,7 @@ RSpec.describe User, type: :model do
         @user.password = '00000'
         @user.password_confirmation = '00000'
         @user.valid?
-    
+
         expect(@user.errors.full_messages).to include('Password is too short (minimum is 6 characters)')
       end
 
