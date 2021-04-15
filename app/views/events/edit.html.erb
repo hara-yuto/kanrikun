@@ -13,13 +13,14 @@
 
 
   <div class="field">
-    <%= f.label :content, "日誌内容" %><br />
-    <%= f.text_area :content, class: :form__text, id:"content" %>
+    <%= f.label :content, "テキスト" %><br />
+    <%= f.text_area :content, class: :form__text, id:"content",placeholder:"入力必須" %>
   </div>  
 
   <div class="field">
+  
     <%= f.label :worktime, "労働時間 " %><br />
-    <%= f.text_area :worktime, class: :form__text, id:"worktime" ,placeholder:"半角数字のみ"%>
+    <%= f.text_field :worktime, class: :form__text, id:"worktime" ,placeholder:"半角数字のみ"%>
   </div>
 
 

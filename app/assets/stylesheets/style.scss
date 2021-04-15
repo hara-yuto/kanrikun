@@ -74,6 +74,7 @@ font-family: 'Courier New', Courier, monospace;
 
 font-family: 'Courier New', Courier, monospace;
 }
+
 .tyukan{
    display: flex;
    padding: 10px;
@@ -141,6 +142,11 @@ text-shadow:1px 1px 0 black,-1px 1px 0 black,1px -1px 0 black,-1px -1px 0 black;
    text-shadow:1px 1px 0 black,-1px 1px 0 black,1px -1px 0 black,-1px -1px 0 black;
 
 }
+textarea{
+   resize: none;
+   height: 100px;
+   width: 150px;
+}
 
 .greeting__link{
 font-size: 20px;
@@ -181,7 +187,11 @@ text-shadow:1px 1px 0 black,-1px 1px 0 black,1px -1px 0 black,-1px -1px 0 black;
 background-color: white;
    border: 1px solid gray;
   margin-bottom: 15px;
+}
 
+.showd3{
+   height: 100px auto;
+   text-align: left;
 
 }
 

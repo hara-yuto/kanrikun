@@ -18,10 +18,10 @@
 | Column    | Type       | Options     |
 | --------- | ---------- | ----------- |
 | title     | string     | null: false |
-| content   | text       |             |
+| content   | text       | null: false |
 | worktime  | string     |             |
-| start_time| datetime   |             |
-| user      | references |             |
+| start_time| datetime   | null: false |
+| user      | references | null: false |
 
 
 ### Association
