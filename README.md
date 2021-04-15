@@ -19,11 +19,21 @@
 ・   トップページ上でスケジュール登録が可能
 ・   登録後カレンダーにタイトルが表示される
 
+[![Image from Gyazo](https://i.gyazo.com/1bcc34e9fa0457ae53b5a04b37ee1407.gif)](https://gyazo.com/1bcc34e9fa0457ae53b5a04b37ee1407)
+
+[![Image from Gyazo](https://i.gyazo.com/962789ab2fe8d8a766950f4ccbd1c7cd.gif)](https://gyazo.com/962789ab2fe8d8a766950f4ccbd1c7cd)
+
 
 ・   カレンダーのタイトルをクリックすると詳細ページに遷移
 ・   編集,削除ボタンが表示される
 ・   編集情報が保存されると詳細ページに遷移
 ・   削除ボタンで情報が削除されトップページに遷移
+
+[![Image from Gyazo](https://i.gyazo.com/0805c16c4b56ecc2c28229cedb269765.gif)](https://gyazo.com/0805c16c4b56ecc2c28229cedb269765)
+
+[![Image from Gyazo](https://i.gyazo.com/1170a19771580eceae2e329e2a085919.gif)](https://gyazo.com/1170a19771580eceae2e329e2a085919)
+
+[![Image from Gyazo](https://i.gyazo.com/70f89d0c723a7eb29f18d0619493200b.gif)](https://gyazo.com/70f89d0c723a7eb29f18d0619493200b)
 
 
 ・   トップページ上部にある「労働計算機」をクリックで簡易計算専用ページに遷移
@@ -33,8 +43,13 @@
 ・   左「週単位」では月曜日〜金曜日までの１日の労働時間を入力し総労働時間と週の法定労働時間を計算
 ・   中「月単位」では月の総労働日数と１日あたりの平均労働時間、所定・法定労働時間を入力し月の残り法定労働時間と残業時間を計算
 ・   右「メモ」では計算した内容などをメモするために活用
+・   １日の法定労働時間、月の残り法定労働時間を超えた場合はアラート発生
 
+[![Image from Gyazo](https://i.gyazo.com/e9af5d71da07b5c7fa86ded748d5b116.gif)](https://gyazo.com/e9af5d71da07b5c7fa86ded748d5b116)
 
+[![Image from Gyazo](https://i.gyazo.com/52bc9665db491d04294dceda90aaf20f.gif)](https://gyazo.com/52bc9665db491d04294dceda90aaf20f)
+
+[![Image from Gyazo](https://i.gyazo.com/07b73590d4243dfe7b8d894f6357bb3f.gif)](https://gyazo.com/07b73590d4243dfe7b8d894f6357bb3f)
 
 # 課題解決
 
